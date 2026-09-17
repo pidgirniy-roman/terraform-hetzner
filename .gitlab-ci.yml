@@ -11,3 +11,8 @@ terraform_validate:
     - terraform init -backend=false
     - terraform fmt -check
     - terraform validate
+terraform_plan:
+  stage: plan
+  script:
+    - terraform init
+    - terraform plan
