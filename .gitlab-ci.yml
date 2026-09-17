@@ -1,0 +1,11 @@
+image: hashicorp/terraform:latest
+
+stages:
+  - validate
+
+terraform_validate:
+  stage: validate
+  script:
+    - terraform init -backend=false
+    - terraform fmt -check
+    - terraform validate
