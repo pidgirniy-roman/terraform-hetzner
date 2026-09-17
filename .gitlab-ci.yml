@@ -4,6 +4,7 @@ image:
 
 stages:
   - validate
+  - plan
 
 terraform_validate:
   stage: validate
@@ -11,6 +12,7 @@ terraform_validate:
     - terraform init -backend=false
     - terraform fmt -check
     - terraform validate
+
 terraform_plan:
   stage: plan
   script:
