@@ -1,6 +1,11 @@
 terraform {
   required_version = ">= 1.15.8"
 
+  backend "http" {
+    
+  }
+  
+
   required_providers {
     hcloud = {
       source  = "hetznercloud/hcloud"
