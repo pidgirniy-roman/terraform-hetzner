@@ -5,6 +5,7 @@ image:
 stages:
   - validate
   - plan
+  - apply
 
 terraform_validate:
   stage: validate
@@ -18,6 +19,12 @@ terraform_plan:
   script:
     - terraform init
     - terraform plan
+
+terraform_apply:
+  stage: apply
+  script:
+    - terraform init
+    - terraform apply -auto-approve
 
 variables:
   TF_HTTP_USERNAME: gitlab-ci-token
