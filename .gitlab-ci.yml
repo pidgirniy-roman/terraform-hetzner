@@ -6,6 +6,7 @@ stages:
   - validate
   - plan
   - apply
+  - destroy
 
 terraform_validate:
   stage: validate
@@ -25,6 +26,13 @@ terraform_apply:
   script:
     - terraform init
     - terraform apply -auto-approve
+
+terraform_destroy:
+  stage: destroy
+  script:
+    - terraform init
+    - terraform destroy -auto-approve
+  when: manual
 
 variables:
   TF_HTTP_USERNAME: gitlab-ci-token
