@@ -9,7 +9,7 @@ terraform {
     unlock_method  = "DELETE"
     retry_wait_min = 5
   }
-  
+
   required_providers {
     hcloud = {
       source  = "hetznercloud/hcloud"
