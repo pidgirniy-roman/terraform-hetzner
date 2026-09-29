@@ -1,5 +1,14 @@
 terraform {
-  required_version = ">= 1.15.8"
+  required_version = "1.16.4"
+
+  cloud {
+    
+      organization = "pidgirniy-roman"
+
+      workspaces {
+        name = "terraform-hetzner"
+      }
+    }
 
   required_providers {
     hcloud = {
