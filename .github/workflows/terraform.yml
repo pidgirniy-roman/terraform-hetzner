@@ -24,3 +24,8 @@ jobs:
         run: terraform plan
         env:
           HCLOUD_TOKEN: ${{secrets.HCLOUD_TOKEN}}
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        env:
+          HCLOUD_TOKEN: ${{secrets.HCLOUD_TOKEN}}
