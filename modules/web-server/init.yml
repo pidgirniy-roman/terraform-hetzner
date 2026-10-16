@@ -3,7 +3,9 @@ package_update: true
 package_upgrade: true
 
 packages:
-  - nginx
   - docker.io
   - git
   - htop
+
+runcmd:
+  - docker run -d -p 80:80 --name web-server --restart always nginx:latest
